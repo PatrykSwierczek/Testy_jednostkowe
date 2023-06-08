@@ -1,8 +1,7 @@
 namespace Testy_jednostkowe
 {
     public class Rownanie_Kwadratowe_Test
-    {
-        string Obliczenia(double a, double b, double c)
+    {       string Obliczenia(double a, double b, double c)
         {
             double dlt = b * b - 4 * a * c;
 
@@ -21,6 +20,22 @@ namespace Testy_jednostkowe
             {
                 return "Równanie nie ma pierwiastków rzeczywistych.";
             }
+
         }
+        //Theory
+        [Theory]
+        [InlineData(1, 1, 1, "Równanie nie ma pierwiastków rzeczywistych.")]
+        public void Rownanie_Kwadratowe(double a, double b, double c, string expected)
+        {
+            // Act
+            string result = Obliczenia(a, b, c);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+
     }
+
+   
 }
