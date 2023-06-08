@@ -25,6 +25,7 @@ namespace Testy_jednostkowe
         //Theory
         [Theory]
         [InlineData(1, 1, 1, "Równanie nie ma pierwiastków rzeczywistych.")]
+        [InlineData(1, -2, 1, "Równanie ma jeden pierwiastek rzeczywisty:\nx = 1")]
         public void Rownanie_Kwadratowe(double a, double b, double c, string expected)
         {
             // Act
